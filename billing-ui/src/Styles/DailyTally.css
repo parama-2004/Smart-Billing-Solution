@@ -1,0 +1,575 @@
+.daily-tally-page {
+    padding: 10px;
+    background: #fff7d6;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1d1d1d;
+}
+
+/* Hide number input spin buttons */
+.no-spin::-webkit-outer-spin-button,
+.no-spin::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.no-spin[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.tally-select,
+.tally-other-input {
+    width: 100%;
+    border: 1px solid #727272;
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #fff;
+}
+
+.tally-other-input {
+    margin-bottom: 6px;
+}
+
+.tally-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, #c5361f, #db6f2b);
+    color: #1b1b1b;
+    border: 1px solid #9f2c1a;
+    padding: 8px 10px;
+}
+
+.tally-header h2 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    font-weight: 700;
+}
+
+.tally-header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.tally-header-actions input,
+.tally-header-actions button,
+.tally-card button,
+.tally-card input {
+    border: 1px solid #727272;
+    border-radius: 2px;
+    padding: 4px 6px;
+}
+
+.tally-grid {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.tally-grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tally-grid.two {
+    grid-template-columns: 1.25fr 0.75fr;
+}
+
+.tally-card {
+    background: #fff;
+    border: 1px solid #6b6b6b;
+    border-radius: 0;
+    padding: 6px;
+}
+
+.tally-card h3 {
+    margin: -6px -6px 6px;
+    padding: 6px;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid #4f4f4f;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.tally-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.tally-table th,
+.tally-table td {
+    border: 1px solid #5b5b5b;
+    padding: 3px 6px;
+    font-size: 12.5px;
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.tally-table td:first-child,
+.tally-table th:first-child {
+    width: 68%;
+    text-transform: uppercase;
+}
+
+.tally-table td:last-child,
+.tally-table th:last-child {
+    width: 32%;
+    text-align: right;
+}
+
+.tally-table input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 1px 2px;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-align: right;
+    color: #0d0d0d;
+    min-height: 22px;
+}
+
+.tally-table input[type="text"] {
+    text-align: left;
+}
+
+.tally-card-cash .tally-table td:nth-child(1),
+.tally-card-cash .tally-table th:nth-child(1) {
+    width: 28%;
+    text-align: center;
+}
+
+.tally-card-cash .tally-table td:nth-child(2),
+.tally-card-cash .tally-table th:nth-child(2) {
+    width: 36%;
+    text-align: center;
+}
+
+.tally-card-cash .tally-table td:nth-child(3),
+.tally-card-cash .tally-table th:nth-child(3) {
+    width: 36%;
+    text-align: right;
+}
+
+.tally-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+}
+
+.tally-summary label {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tally-inline-stats {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+    font-weight: 600;
+}
+
+.tally-inline-stats span {
+    font-size: 15px;
+}
+
+.tally-inline-stats.column {
+    grid-template-columns: 1fr;
+}
+
+.tally-total-row td {
+    background: #f4f4f4;
+    font-weight: 800;
+}
+
+.diff-positive {
+    background: #d9f7d6 !important;
+    color: #0f6b0f;
+}
+
+.diff-negative {
+    background: #ffd7d7 !important;
+    color: #8a1111;
+}
+
+.diff-zero {
+    background: #eef2ff !important;
+    color: #1d1d1d;
+}
+
+.tally-card input:focus {
+    outline: 2px solid #1d4ed8;
+    outline-offset: -1px;
+    background: #eef6ff;
+}
+
+.tally-card-daily .tally-table td:nth-child(1),
+.tally-card-daily .tally-table th:nth-child(1),
+.tally-card-actual .tally-table td:nth-child(1),
+.tally-card-actual .tally-table th:nth-child(1) {
+    width: 50%;
+    text-align: left;
+}
+
+.tally-card-daily .tally-table td:nth-child(2),
+.tally-card-daily .tally-table th:nth-child(2),
+.tally-card-actual .tally-table td:nth-child(2),
+.tally-card-actual .tally-table th:nth-child(2) {
+    width: 30%;
+    text-align: right;
+}
+
+.tally-card-daily .tally-table td:nth-child(3),
+.tally-card-daily .tally-table th:nth-child(3),
+.tally-card-actual .tally-table td:nth-child(3),
+.tally-card-actual .tally-table th:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.tally-card-summary .tally-summary input {
+    font-weight: 800;
+}
+
+.tally-card-internal {
+    background: #f9d4d4;
+}
+
+.tally-card-internal h3 {
+    background: #da6e6e;
+}
+
+.tally-card-external {
+    background: #ffd3d3;
+}
+
+.tally-card-external h3 {
+    background: #de7e7e;
+}
+
+.tally-card-vendors {
+    background: #f7ebbf;
+}
+
+.tally-card-vendors h3 {
+    background: #e4c74f;
+}
+
+.tally-card-salary {
+    background: #d6f0d0;
+}
+
+.tally-card-salary h3 {
+    background: #8fcf80;
+}
+
+.tally-card-advance {
+    background: #f8d7c7;
+}
+
+.tally-card-advance h3 {
+    background: #f1a477;
+}
+
+.vendor-add-row {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr auto;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.vendor-search-list {
+    border: 1px solid #6b6b6b;
+    background: #fffbe6;
+    max-height: 140px;
+    overflow-y: auto;
+    margin-bottom: 6px;
+}
+
+.vendor-search-item {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    color: #111;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.vendor-search-item:hover {
+    background: #ffeaa5;
+}
+
+.tally-card-vendors .tally-table td:nth-child(1),
+.tally-card-vendors .tally-table th:nth-child(1) {
+    width: 54%;
+    text-align: left;
+}
+
+.tally-card-vendors .tally-table td:nth-child(2),
+.tally-card-vendors .tally-table th:nth-child(2) {
+    width: 26%;
+    text-align: right;
+}
+
+.tally-card-vendors .tally-table td:nth-child(3),
+.tally-card-vendors .tally-table th:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.tally-card-internal .tally-table td:nth-child(1),
+.tally-card-internal .tally-table th:nth-child(1),
+.tally-card-external .tally-table td:nth-child(1),
+.tally-card-external .tally-table th:nth-child(1) {
+    width: 54%;
+    text-align: left;
+}
+
+.tally-card-internal .tally-table td:nth-child(2),
+.tally-card-internal .tally-table th:nth-child(2),
+.tally-card-external .tally-table td:nth-child(2),
+.tally-card-external .tally-table th:nth-child(2) {
+    width: 26%;
+    text-align: right;
+}
+
+.tally-card-internal .tally-table td:nth-child(3),
+.tally-card-internal .tally-table th:nth-child(3),
+.tally-card-external .tally-table td:nth-child(3),
+.tally-card-external .tally-table th:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.tally-card-salary .tally-table td:nth-child(1),
+.tally-card-salary .tally-table th:nth-child(1),
+.tally-card-advance .tally-table td:nth-child(1),
+.tally-card-advance .tally-table th:nth-child(1) {
+    width: 54%;
+    text-align: left;
+}
+
+.tally-card-salary .tally-table td:nth-child(2),
+.tally-card-salary .tally-table th:nth-child(2),
+.tally-card-advance .tally-table td:nth-child(2),
+.tally-card-advance .tally-table th:nth-child(2) {
+    width: 26%;
+    text-align: right;
+}
+
+.tally-card-salary .tally-table td:nth-child(3),
+.tally-card-salary .tally-table th:nth-child(3),
+.tally-card-advance .tally-table td:nth-child(3),
+.tally-card-advance .tally-table th:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.tally-card-approx {
+    background: #d9efad;
+}
+
+.tally-card-approx h3 {
+    background: #9cc84f;
+}
+
+.tally-card-daily {
+    background: #c4ebf8;
+}
+
+.tally-card-daily h3 {
+    background: #53a8cf;
+}
+
+.tally-card-actual {
+    background: #d0e8ff;
+}
+
+.tally-card-actual h3 {
+    background: #4d90d3;
+    color: #fff;
+}
+
+.tally-card-cash {
+    background: #dff0b1;
+}
+
+.tally-card-cash h3 {
+    background: #b8d06a;
+}
+
+.tally-card-summary {
+    background: #ffe0b8;
+}
+
+.tally-card-summary h3 {
+    background: #f3aa59;
+}
+
+.denom-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.denom-actions button {
+    flex: 1;
+}
+
+.denom-clear-btn {
+    background: #c0392b !important;
+    border-color: #922b21 !important;
+}
+
+.denom-clear-btn:hover {
+    background: #a93226 !important;
+}
+
+.tally-card button,
+.tally-header-actions button {
+    background: #2f5fd7;
+    color: #fff;
+    border: 1px solid #1e3fa1;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.tally-card button:hover,
+.tally-header-actions button:hover {
+    background: #244db0;
+}
+
+@media (max-width: 1200px) {
+    .tally-grid.three,
+    .tally-grid.two {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === Search Modal Overlay Styles === */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    width: 760px;
+    max-width: 96vw;
+    max-height: 80vh;
+    overflow: auto;
+    padding: 20px;
+    color: #333;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #333;
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    margin: 0 !important;
+    border: none !important;
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-close:hover {
+    color: #ff4444;
+}
+
+.hold-bills-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.hold-bills-table th {
+    background: #2c3e50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.hold-bills-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.hold-bill-row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.hold-bill-row:hover {
+    background-color: #f5f5f5 !important;
+}
+
+.modal-footer {
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.retro-btn {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.retro-btn:hover {
+    background: #34495e;
+}
+
+.retro-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: normal;
+    text-align: left;
+}
+

@@ -1,0 +1,416 @@
+/* === PURCHASE REPORT - RETRO STYLING === */
+
+/* --- Global Container --- */
+.purchase-report-container {
+    font-family: 'Tahoma', 'Verdana', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fff8e6 0%, #ffe8cc 100%);
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #000080;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* --- Header --- */
+.purchase-report-header {
+    background: linear-gradient(to bottom, #008000 0%, #005500 100%);
+    color: #ffffff;
+    height: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- Filters Section --- */
+.purchase-filters-section {
+    background: linear-gradient(to bottom, #fffaf0 0%, #ffe8d0 100%);
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.purchase-filters-section::before {
+    content: "REPORT FILTERS";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #008000;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+/* --- Filters Grid --- */
+.purchase-filters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .purchase-filters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .purchase-filters-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.purchase-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.purchase-filter-group label {
+    font-weight: bold;
+    font-size: 12px;
+    color: #000080;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.purchase-filter-group label::before {
+    content: "?";
+    font-size: 10px;
+    color: #008000;
+}
+
+/* --- Retro Inputs --- */
+.purchase-report-input,
+.purchase-report-select {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    padding: 8px 10px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.purchase-report-select {
+    cursor: pointer;
+}
+
+.purchase-report-input:focus,
+.purchase-report-select:focus {
+    background: linear-gradient(to bottom, #ffffcc 0%, #ffffaa 100%);
+    border-color: #000080;
+    box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.2);
+}
+
+/* --- Summary Section --- */
+.purchase-summary-section {
+    background: linear-gradient(to bottom, #e6ffe6 0%, #d0ffd0 100%);
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.purchase-summary-section::before {
+    content: "PURCHASE SUMMARY";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #008000;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+/* --- Summary Grid --- */
+.purchase-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .purchase-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Summary Cards --- */
+.purchase-summary-card {
+    background: linear-gradient(to bottom, #ffffff 0%, #f5fff5 100%);
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 15px;
+    border-radius: 0;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.purchase-summary-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 48%, rgba(0, 128, 0, 0.1) 50%, transparent 52%);
+    pointer-events: none;
+}
+
+.purchase-summary-card.total {
+    border-left: 5px solid #008000;
+}
+
+.purchase-summary-card.paid {
+    border-left: 5px solid #0080ff;
+}
+
+.purchase-summary-card.balance {
+    border-left: 5px solid #ff0000;
+}
+
+.purchase-summary-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.purchase-summary-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000080;
+    font-family: 'Courier New', monospace;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.purchase-summary-card.total .purchase-summary-amount {
+    color: #008000;
+}
+
+.purchase-summary-card.paid .purchase-summary-amount {
+    color: #0080ff;
+}
+
+.purchase-summary-card.balance .purchase-summary-amount {
+    color: #ff0000;
+}
+
+/* --- Table Section --- */
+.purchase-table-section {
+    background: linear-gradient(to bottom, #f0f8ff 0%, #e0f0ff 100%);
+    padding: 15px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.purchase-table-section::before {
+    content: "PURCHASE RECORDS";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #008000;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+/* --- Retro Table --- */
+.purchase-retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.purchase-retro-table thead {
+    background: linear-gradient(to bottom, #000080 0%, #000055 100%);
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #000000;
+}
+
+.purchase-retro-table thead th {
+    padding: 10px 8px;
+    text-align: left;
+    border-right: 1px solid #0080ff;
+    border-bottom: 2px solid #ffffff;
+}
+
+.purchase-retro-table thead th:last-child {
+    border-right: none;
+}
+
+.purchase-retro-table tbody tr {
+    border-bottom: 1px solid #d0d0d0;
+    transition: all 0.2s ease;
+}
+
+.purchase-retro-table tbody tr:nth-child(even) {
+    background: linear-gradient(to right, #ffffff 0%, #f5f5f5 100%);
+}
+
+.purchase-retro-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.purchase-retro-table tbody tr:hover {
+    background: linear-gradient(to right, #ffffcc 0%, #ffffaa 100%);
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.purchase-retro-table tbody td {
+    padding: 8px;
+    border-right: 1px solid #e0e0e0;
+    word-wrap: break-word;
+}
+
+.purchase-retro-table tbody td:last-child {
+    border-right: none;
+}
+
+/* --- Status Badges --- */
+.purchase-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    border: 2px solid;
+    font-family: 'Courier New', monospace;
+}
+
+.purchase-badge-success {
+    background: linear-gradient(to bottom, #00ff00 0%, #00cc00 100%);
+    color: #000;
+    border-color: #ffffff #00aa00 #00aa00 #ffffff;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.purchase-badge-warning {
+    background: linear-gradient(to bottom, #ffaa00 0%, #ff8800 100%);
+    color: #000;
+    border-color: #ffffff #cc6600 #cc6600 #ffffff;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.purchase-badge-pending {
+    background: linear-gradient(to bottom, #ffff00 0%, #ffcc00 100%);
+    color: #000;
+    border-color: #ffffff #cc9900 #cc9900 #ffffff;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Loading State --- */
+.purchase-loading {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Courier New', monospace;
+    color: #000080;
+    font-weight: bold;
+}
+
+.purchase-empty-state {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Courier New', monospace;
+    color: #666;
+    font-weight: bold;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .purchase-report-container {
+        padding: 10px;
+    }
+
+    .purchase-filters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .purchase-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .purchase-report-header {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    .purchase-filters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .purchase-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .purchase-retro-table {
+        font-size: 11px;
+    }
+
+    .purchase-retro-table thead th,
+    .purchase-retro-table tbody td {
+        padding: 6px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .purchase-report-container {
+        padding: 5px;
+    }
+
+    .purchase-filters-section,
+    .purchase-summary-section,
+    .purchase-table-section {
+        padding: 10px;
+    }
+
+    .purchase-retro-table {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,345 @@
+.cheque-master-container {
+    font-family: 'Tahoma', 'Verdana', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #d8bfd8 0%, #b9a9c9 100%);
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #000080;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cheque-header-bar {
+    background: linear-gradient(to bottom, #000080 0%, #000055 100%);
+    color: #fff;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cheque-form-section {
+    background-color: #f0e6ff;
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.cheque-form-section::before {
+    content: "CHEQUE ENTRY";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #800000;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.cheque-form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.cheque-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cheque-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.cheque-form-group label {
+    font-weight: bold;
+    font-size: 12px;
+    color: #000080;
+}
+
+.cheque-input {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    padding: 6px 8px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cheque-input:focus {
+    background: linear-gradient(to bottom, #ffffcc 0%, #ffffaa 100%);
+    border-color: #000080;
+}
+
+.cheque-search-list {
+    margin-top: 4px;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: #fff;
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+.cheque-search-list button {
+    width: 100%;
+    text-align: left;
+    border: 0;
+    border-bottom: 1px solid #efefef;
+    background: #fff;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cheque-search-list button:hover {
+    background: #f0f8ff;
+}
+
+.cheque-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.cheque-btn {
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.cheque-btn.primary {
+    background: linear-gradient(to bottom, #000080 0%, #000055 100%);
+    color: #fff;
+}
+
+.cheque-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.cheque-grid-section {
+    background: linear-gradient(to bottom, #e6e6fa 0%, #d8d8f0 100%);
+    padding: 15px;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    position: relative;
+}
+
+.cheque-grid-section::before {
+    content: "CHEQUE LIST";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #008000;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.cheque-grid-wrap {
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: white;
+    margin-top: 10px;
+    overflow-x: auto;
+    max-height: 480px;
+    overflow-y: auto;
+}
+
+.cheque-grid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cheque-grid thead {
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cheque-grid th,
+.cheque-grid td {
+    border: 1px solid #888;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.cheque-grid tbody tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.cheque-grid tbody tr:hover {
+    background: #e6f7ff;
+}
+
+.cheque-grid-btn {
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    background: #d5d5d5;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cheque-grid-btn:hover {
+    background: #c7e7ff;
+}
+
+.cheque-empty {
+    text-align: center;
+    padding: 14px;
+}
+
+@media (max-width: 1000px) {
+    .cheque-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cheque-actions {
+        flex-direction: column;
+    }
+}
+
+/* === Search Modal Overlay Styles === */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    width: 760px;
+    max-width: 96vw;
+    max-height: 80vh;
+    overflow: auto;
+    padding: 20px;
+    color: #333;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #333;
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    margin: 0 !important;
+    border: none !important;
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-close:hover {
+    color: #ff4444;
+}
+
+.hold-bills-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.hold-bills-table th {
+    background: #2c3e50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.hold-bills-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.hold-bill-row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.hold-bill-row:hover {
+    background-color: #f5f5f5 !important;
+}
+
+.modal-footer {
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.retro-btn {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.retro-btn:hover {
+    background: #34495e;
+}
+
+.retro-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: normal;
+    text-align: left;
+}
+

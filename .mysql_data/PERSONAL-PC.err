@@ -1,0 +1,6 @@
+2026-06-02T12:11:26.869243Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2026-06-02T12:11:26.869291Z 0 [System] [MY-013169] [Server] C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe (mysqld 8.0.36) initializing of server in progress as process 16924
+2026-06-02T12:11:26.944063Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-06-02T12:11:28.900125Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-06-02T12:11:33.233574Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+2026-06-02T12:11:33.760502Z 6 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'

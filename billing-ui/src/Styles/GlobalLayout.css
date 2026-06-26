@@ -1,0 +1,153 @@
+/* === GLOBAL RETRO LAYOUT SYSTEM === */
+
+/* Main Container - Always fills screen */
+.retro-master-container {
+    font-family: 'Tahoma', 'Verdana', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e8f4ff 0%, #d4e8ff 100%);
+    min-height: 100vh;
+
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #000080;
+    font-size: 14px;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content Wrapper - Auto height, full width */
+.retro-content-wrapper {
+    width: 100%;
+    height: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Standard Header Bar */
+.retro-header-bar {
+    background: linear-gradient(to bottom, #000080 0%, #000055 100%);
+    color: #ffffff;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Main Content Area */
+.retro-main-content {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom, #f0f8ff 0%, #e0f0ff 100%);
+    border: 1px solid #ccc;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Standard Status Bar */
+.retro-status-bar {
+    margin-top: 15px;
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a8a8a8 100%);
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 6px 15px;
+    font-size: 12px;
+    font-family: 'Tahoma', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-item::before {
+    content: "■";
+    color: #000080;
+    font-size: 10px;
+}
+
+/* === RESPONSIVE BEHAVIOR === */
+
+/* On small screens, stack vertically */
+@media (max-width: 768px) {
+    .retro-master-container {
+        padding: 10px;
+    }
+
+    .retro-main-content {
+        padding: 15px;
+    }
+
+    .retro-status-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .retro-header-bar {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
+/* On very small screens */
+@media (max-width: 480px) {
+    .retro-master-container {
+        padding: 8px;
+    }
+
+    .retro-main-content {
+        padding: 12px;
+    }
+
+    .retro-header-bar {
+        font-size: 13px;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}
+
+/* Ensure content never overflows horizontally */
+.retro-main-content {
+    overflow-x: hidden;
+}
+
+/* Print styles */
+@media print {
+    .retro-master-container {
+        background: white !important;
+        padding: 0 !important;
+    }
+
+    .retro-header-bar,
+    .retro-status-bar {
+        display: none !important;
+    }
+
+    .retro-main-content {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+}

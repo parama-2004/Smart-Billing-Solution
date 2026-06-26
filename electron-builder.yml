@@ -1,0 +1,33 @@
+appId: com.billingsuite.desktop
+productName: Smart Billing
+copyright: Copyright © 2026
+
+directories:
+  output: dist-electron
+  buildResources: build
+
+files:
+  - electron/**/*
+  - billing-ui/dist/**/*
+  - package.json
+
+extraResources:
+  - from: build/api/
+    to: api
+    filter:
+      - "**/*"
+
+win:
+  icon: build/icon.ico    
+  target:
+    - target: nsis
+      arch:
+        - x64
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Smart Billing

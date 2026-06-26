@@ -1,0 +1,359 @@
+/* === PRODUCT WISE REPORT - RETRO STYLING === */
+
+.product-wise-report-container {
+    font-family: 'Tahoma', 'Verdana', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e6ffe6 0%, #ccffcc 100%);
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #000080;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.product-wise-report-header {
+    background: linear-gradient(to bottom, #008000 0%, #004d00 100%);
+    color: #ffffff;
+    height: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.product-wise-view-mode {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.product-wise-view-mode button {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(to bottom, #e0e0e0 0%, #c0c0c0 100%);
+    padding: 8px 20px;
+    font-family: 'Tahoma', 'Verdana', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000080;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.product-wise-view-mode button:hover {
+    background: linear-gradient(to bottom, #f0f0f0 0%, #d0d0d0 100%);
+}
+
+.product-wise-view-mode button.primary {
+    background: linear-gradient(to bottom, #008000 0%, #004d00 100%);
+    color: white;
+    border-color: #ffffff #404040 #404040 #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.product-wise-filters-section {
+    background: linear-gradient(to bottom, #f0fff0 0%, #e8ffe8 100%);
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.product-wise-filters-section::before {
+    content: "REPORT FILTERS";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #008000;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.product-wise-filters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .product-wise-filters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-wise-filters-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-wise-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.product-wise-filter-group label {
+    font-weight: bold;
+    font-size: 12px;
+    color: #000080;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.product-wise-filter-group label::before {
+    content: "?";
+    font-size: 10px;
+    color: #008000;
+}
+
+.product-wise-report-input {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    padding: 8px 10px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.product-wise-report-input:focus {
+    background: linear-gradient(to bottom, #ffffcc 0%, #ffffaa 100%);
+    border-color: #000080;
+    box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.2);
+}
+
+.product-wise-summary-section {
+    background: linear-gradient(to bottom, #e6ffe6 0%, #d0ffd0 100%);
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.product-wise-summary-section::before {
+    content: "SALES SUMMARY";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #008000;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.product-wise-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .product-wise-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-wise-summary-card {
+    background: linear-gradient(to bottom, #ffffff 0%, #f5fff5 100%);
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 15px;
+    border-radius: 0;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-wise-summary-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 48%, rgba(0, 128, 0, 0.1) 50%, transparent 52%);
+    pointer-events: none;
+}
+
+.product-wise-summary-card.revenue {
+    border-left: 5px solid #008000;
+}
+
+.product-wise-summary-card.quantity {
+    border-left: 5px solid #0080ff;
+}
+
+.product-wise-summary-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.product-wise-summary-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000080;
+    font-family: 'Courier New', monospace;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.product-wise-summary-card.revenue .product-wise-summary-amount {
+    color: #008000;
+}
+
+.product-wise-summary-card.quantity .product-wise-summary-amount {
+    color: #0080ff;
+}
+
+.product-wise-table-section {
+    background: linear-gradient(to bottom, #f0fff0 0%, #e0ffe0 100%);
+    padding: 15px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.product-wise-table-section::before {
+    content: "PRODUCT SALES";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #008000;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.product-wise-retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.product-wise-retro-table thead {
+    background: linear-gradient(to bottom, #008000 0%, #004d00 100%);
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #000000;
+}
+
+.product-wise-retro-table thead th {
+    padding: 10px 8px;
+    text-align: left;
+    border-right: 1px solid #00ff00;
+    border-bottom: 2px solid #ffffff;
+}
+
+.product-wise-retro-table thead th:last-child {
+    border-right: none;
+}
+
+.product-wise-retro-table tbody tr {
+    border-bottom: 1px solid #d0d0d0;
+    transition: all 0.2s ease;
+}
+
+.product-wise-retro-table tbody tr:nth-child(even) {
+    background: linear-gradient(to right, #ffffff 0%, #f5f5f5 100%);
+}
+
+.product-wise-retro-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.product-wise-retro-table tbody tr:hover {
+    background: linear-gradient(to right, #ffffcc 0%, #ffffaa 100%);
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.product-wise-retro-table tbody td {
+    padding: 8px;
+    border-right: 1px solid #e0e0e0;
+    word-wrap: break-word;
+    text-align: right;
+}
+
+.product-wise-retro-table tbody td:first-child {
+    text-align: left;
+}
+
+.product-wise-retro-table tbody td:nth-child(2) {
+    text-align: left;
+}
+
+.product-wise-retro-table tbody td:last-child {
+    border-right: none;
+}
+
+.product-wise-loading {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Courier New', monospace;
+    color: #000080;
+    font-weight: bold;
+}
+
+.product-wise-empty-state {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Courier New', monospace;
+    color: #666;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .product-wise-report-container {
+        padding: 10px;
+    }
+
+    .product-wise-retro-table {
+        font-size: 11px;
+    }
+
+    .product-wise-retro-table thead th,
+    .product-wise-retro-table tbody td {
+        padding: 6px 4px;
+    }
+}

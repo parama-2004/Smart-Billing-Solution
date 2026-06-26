@@ -1,0 +1,17 @@
+{
+    "name": "smart-billing-desktop",
+    "version": "1.0.0",
+    "main": "main.js",
+    "private": true,
+    "scripts": {
+        "build": "cd ../billing-ui && npm run build",
+        "start": "electron .",
+        "dev": "cd ../billing-ui && npm run dev & electron .",
+        "electron-build": "npm run build && electron-builder"
+    },
+    "devDependencies": {
+        "electron": "^30.0.0",
+        "electron-builder": "^25.1.1",
+        "electron-is-dev": "^1.2.0"
+    }
+}

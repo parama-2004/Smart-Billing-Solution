@@ -1,0 +1,604 @@
+﻿/* === CUSTOMER MASTER - RETRO STYLING === */
+
+/* --- Global Container --- */
+.customer-master-container {
+    font-family: 'Tahoma', 'Verdana', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e6f3ff 0%, #c9dfff 100%);
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #000080;
+    font-size: 13px;
+    line-height: 1.4;
+    min-height: 100vh;
+}
+
+/* --- Header Bar --- */
+.customer-header-bar {
+    background: linear-gradient(to bottom, #000080 0%, #000055 100%);
+    color: #ffffff;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+/* --- Form Section --- */
+.customer-form-section {
+    background: linear-gradient(to bottom, #f0f6ff 0%, #e0ecff 100%);
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+    .customer-form-section::before {
+        content: "CUSTOMER INFORMATION";
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        background: #800000;
+        color: white;
+        padding: 2px 10px;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 2px;
+    }
+
+.section-title {
+    color: #000080;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+    border-bottom: 2px solid #000080;
+    padding-bottom: 5px;
+}
+
+/* --- Form Grid --- */
+.customer-form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .customer-form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .customer-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.customer-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .customer-form-group label {
+        font-weight: bold;
+        font-size: 12px;
+        color: #000080;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+        .customer-form-group label::before {
+            content: "▶";
+            font-size: 10px;
+            color: #800080;
+        }
+
+        .customer-form-group label.required::after {
+            content: "*";
+            color: #ff0000;
+            margin-left: 4px;
+        }
+
+/* --- Retro Inputs --- */
+.customer-retro-input {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    padding: 6px 8px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .customer-retro-input:focus {
+        background: linear-gradient(to bottom, #ffffcc 0%, #ffffaa 100%);
+        border-color: #000080;
+        box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.2);
+    }
+
+    .customer-retro-input:disabled {
+        background: linear-gradient(to bottom, #e8e8e8 0%, #d0d0d0 100%);
+        color: #555;
+        cursor: not-allowed;
+        border-color: #aaa #ddd #ddd #aaa;
+    }
+
+/* --- Action Buttons --- */
+.customer-action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed #ccc;
+}
+
+.customer-retro-btn {
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 10px 25px;
+    font-weight: bold;
+    font-family: 'Tahoma', 'Verdana', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    color: #000;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
+    min-width: 180px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+    .customer-retro-btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .customer-retro-btn:hover {
+        background: linear-gradient(to bottom, #d0d0d0 0%, #b0b0b0 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+        .customer-retro-btn:hover::after {
+            left: 100%;
+        }
+
+    .customer-retro-btn:active {
+        border-color: #808080 #ffffff #ffffff #808080;
+        transform: translateY(1px);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .customer-retro-btn:disabled {
+        background: linear-gradient(to bottom, #e0e0e0 0%, #c0c0c0 100%);
+        color: #888;
+        border-color: #ccc #eee #eee #ccc;
+        cursor: not-allowed;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .customer-retro-btn.primary {
+        background: linear-gradient(to bottom, #000080 0%, #000055 100%);
+        color: white;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .customer-retro-btn.secondary {
+        background: linear-gradient(to bottom, #800000 0%, #550000 100%);
+        color: white;
+    }
+
+/* --- Summary Box --- */
+.customer-summary-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, #e6f0ff 0%, #d0e0ff 100%);
+    padding: 15px;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+    .customer-summary-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .customer-summary-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+.customer-summary-item {
+    background: white;
+    padding: 10px;
+    border: 2px solid #000080;
+    border-style: groove;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+}
+
+.customer-summary-label {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.customer-summary-value {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000080;
+}
+
+/* --- Search Section --- */
+.customer-search-section {
+    margin-bottom: 20px;
+}
+
+.customer-search-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%);
+    padding: 10px;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+    .customer-search-box label {
+        font-weight: bold;
+        color: #000080;
+        white-space: nowrap;
+    }
+
+.customer-search-count {
+    background: #000080;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    border: 2px solid;
+    border-color: #ffffff #000055 #000055 #ffffff;
+}
+
+/* --- Customer Grid --- */
+.customer-grid-container {
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+    .customer-grid-container::before {
+        content: "CUSTOMERS LIST";
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        background: #008000;
+        color: white;
+        padding: 2px 10px;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 2px;
+        z-index: 1;
+    }
+
+.customer-grid {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    min-width: 1000px;
+}
+
+    .customer-grid thead {
+        background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+        color: #000;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .customer-grid th {
+        border: 1px solid #888;
+        border-style: outset;
+        padding: 10px 8px;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .customer-grid th::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ffffff 0%, #888888 100%);
+        }
+
+    .customer-grid tbody tr {
+        height: 45px;
+        transition: all 0.15s ease;
+        cursor: pointer;
+    }
+
+        .customer-grid tbody tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .customer-grid tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .customer-grid tbody tr:hover:not(.selected) {
+            background-color: #e6f7ff !important;
+        }
+
+        .customer-grid tbody tr.selected {
+            background: linear-gradient(to right, #000080 0%, #1a1a8a 100%) !important;
+            color: #ffffff !important;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+            .customer-grid tbody tr.selected td {
+                border-color: #4d4dff !important;
+            }
+
+    .customer-grid td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        vertical-align: middle;
+        font-size: 13px;
+    }
+
+/* --- Column Widths --- */
+.customer-id-cell {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+.customer-name-cell {
+    width: 220px;
+    min-width: 220px;
+}
+
+.customer-mobile-cell {
+    width: 120px;
+    min-width: 120px;
+    font-family: 'Courier New', monospace;
+}
+
+.customer-balance-cell {
+    width: 120px;
+    min-width: 120px;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+}
+
+.customer-loyalty-cell {
+    width: 100px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.customer-actions-cell {
+    width: 100px;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* --- Balance Colors --- */
+.customer-balance-cell.positive {
+    color: #006400;
+    font-weight: bold;
+}
+
+.customer-balance-cell.negative {
+    color: #ff0000;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* --- Grid Action Buttons --- */
+.customer-grid-btn {
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000080;
+    transition: all 0.2s ease;
+    min-width: 70px;
+    font-family: 'Tahoma', sans-serif;
+}
+
+    .customer-grid-btn:hover {
+        background: linear-gradient(to bottom, #d0d0d0 0%, #b0b0b0 100%);
+        transform: translateY(-1px);
+    }
+
+    .customer-grid-btn:active {
+        border-color: #808080 #ffffff #ffffff #808080;
+        transform: translateY(0);
+    }
+
+    .customer-grid-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none !important;
+    }
+
+/* --- No Data Row --- */
+.customer-no-data {
+    text-align: center;
+    padding: 30px !important;
+    color: #999;
+    font-style: italic;
+    background-color: #f8f8f8 !important;
+    font-size: 14px;
+}
+
+/* --- Status Bar --- */
+.customer-status-bar {
+    margin-top: 15px;
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a8a8a8 100%);
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-family: 'Tahoma', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
+}
+
+    .customer-status-bar::before {
+        content: "SYSTEM STATUS";
+        position: absolute;
+        top: -8px;
+        left: 10px;
+        background: #000080;
+        color: white;
+        padding: 1px 8px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+.customer-status-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    .customer-status-item::before {
+        content: "■";
+        color: #000080;
+        font-size: 10px;
+    }
+
+/* --- Error Messages --- */
+.customer-error-message {
+    color: #ff0000;
+    font-size: 11px;
+    margin-top: 3px;
+    font-family: 'Courier New', monospace;
+    font-style: italic;
+}
+
+.customer-form-group.error .customer-retro-input {
+    border-color: #ff0000 #ffcccc #ffcccc #ff0000;
+    background: linear-gradient(to bottom, #fff0f0 0%, #ffe0e0 100%);
+}
+
+/* --- Loading Indicator --- */
+.customer-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 128, 0.3);
+    border-radius: 50%;
+    border-top-color: #000080;
+    animation: customer-spin 1s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes customer-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Print Styles --- */
+@media print {
+    .customer-master-container {
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+    }
+
+    .customer-retro-btn,
+    .customer-status-bar,
+    .customer-header-bar {
+        display: none !important;
+    }
+
+    .customer-grid {
+        border: 2px solid #000 !important;
+    }
+}
+
+/* --- Scrollbar Styling --- */
+.customer-grid-container::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.customer-grid-container::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 100%);
+    border: 1px solid #ccc;
+}
+
+.customer-grid-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    border-radius: 0;
+}
+
+    .customer-grid-container::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #d0d0d0 0%, #b0b0b0 100%);
+    }

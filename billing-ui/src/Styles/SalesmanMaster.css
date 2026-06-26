@@ -1,0 +1,594 @@
+﻿/* === SALESMAN MASTER - RETRO WINDOWS STYLE === */
+
+.salesman-master-container {
+    font-family: 'Tahoma', 'Verdana', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #c9d6ff 0%, #e2e2e2 100%);
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #000080;
+    font-size: 13px;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+/* --- Header --- */
+.salesman-header-bar {
+    background: linear-gradient(to bottom, #000080 0%, #000055 100%);
+    color: #ffffff;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+/* --- Form Section --- */
+.salesman-form-section {
+    background-color: #f0f8ff;
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+    .salesman-form-section::before {
+        content: "SALESMAN DETAILS";
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        background: #800000;
+        color: white;
+        padding: 2px 10px;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 2px;
+    }
+
+/* Form Grid Layout */
+.salesman-form-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.salesman-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .salesman-form-group label {
+        font-weight: bold;
+        font-size: 12px;
+        color: #000080;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+        .salesman-form-group label::before {
+            content: "▶";
+            font-size: 10px;
+            color: #008000;
+        }
+
+        .salesman-form-group label.required::after {
+            content: " *";
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+    /* Full width inputs for address */
+    .salesman-form-group.full-width {
+        grid-column: 1 / -1;
+    }
+
+/* --- Retro Inputs --- */
+.salesman-retro-input {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    padding: 6px 8px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .salesman-retro-input:focus {
+        background: linear-gradient(to bottom, #ffffcc 0%, #ffffaa 100%);
+        border-color: #000080;
+        box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.2);
+    }
+
+    .salesman-retro-input:disabled {
+        background: linear-gradient(to bottom, #e8e8e8 0%, #d0d0d0 100%);
+        color: #555;
+        cursor: not-allowed;
+        border-color: #aaa #ddd #ddd #aaa;
+    }
+
+/* --- Retro Select --- */
+.salesman-retro-select {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    padding: 6px 8px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+    .salesman-retro-select:focus {
+        background: linear-gradient(to bottom, #ffffcc 0%, #ffffaa 100%);
+        border-color: #000080;
+        box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.2);
+    }
+
+/* --- Action Buttons --- */
+.salesman-action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed #ccc;
+}
+
+.salesman-retro-btn {
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-family: 'Tahoma', 'Verdana', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    color: #000;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
+    min-width: 150px;
+    text-align: center;
+}
+
+    .salesman-retro-btn:hover {
+        background: linear-gradient(to bottom, #d0d0d0 0%, #b0b0b0 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .salesman-retro-btn:active {
+        border-color: #808080 #ffffff #ffffff #808080;
+        transform: translateY(1px);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .salesman-retro-btn.primary {
+        background: linear-gradient(to bottom, #000080 0%, #000055 100%);
+        color: white;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+
+        .salesman-retro-btn.primary:hover {
+            background: linear-gradient(to bottom, #0000aa 0%, #000066 100%);
+        }
+
+    .salesman-retro-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none !important;
+    }
+
+/* --- Salesman Grid Section --- */
+.salesman-grid-section {
+    background: linear-gradient(to bottom, #e6e6fa 0%, #d8d8f0 100%);
+    padding: 15px;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    margin-top: 20px;
+    position: relative;
+}
+
+    .salesman-grid-section::before {
+        content: "SALESMAN LIST";
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        background: #008000;
+        color: white;
+        padding: 2px 10px;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 2px;
+    }
+
+/* --- Salesman Grid --- */
+.salesman-grid-container {
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: white;
+    margin-top: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    overflow-x: auto;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.salesman-grid {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+    .salesman-grid thead {
+        background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+        color: #000;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .salesman-grid th {
+        border: 1px solid #888;
+        border-style: outset;
+        padding: 10px 8px;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+        .salesman-grid th::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ffffff 0%, #888888 100%);
+        }
+
+    .salesman-grid tbody tr {
+        height: 35px;
+        transition: all 0.15s ease;
+        cursor: pointer;
+    }
+
+        .salesman-grid tbody tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .salesman-grid tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .salesman-grid tbody tr:hover {
+            background: linear-gradient(to right, #e6f7ff 0%, #d0e8ff 100%) !important;
+            color: #000080 !important;
+        }
+
+        .salesman-grid tbody tr.selected {
+            background: linear-gradient(to right, #000080 0%, #1a1a8a 100%) !important;
+            color: #ffffff !important;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+    .salesman-grid td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-family: 'Consolas', 'Courier New', monospace;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+/* Column specific styles */
+.salesman-id-cell {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.salesman-name-cell {
+    width: 250px;
+    min-width: 200px;
+    text-align: left !important;
+    padding-left: 15px !important;
+}
+
+.salesman-mobile-cell {
+    width: 150px;
+    min-width: 150px;
+    font-family: 'Courier New', monospace;
+}
+
+.salesman-city-cell {
+    width: 180px;
+    min-width: 150px;
+}
+
+.salesman-status-cell {
+    width: 120px;
+    min-width: 120px;
+}
+
+.salesman-actions-cell {
+    width: 100px;
+    min-width: 100px;
+}
+
+/* Status Badges */
+.status-active {
+    display: inline-block;
+    background: linear-gradient(to bottom, #90ee90 0%, #32cd32 100%);
+    color: #006400;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid #32cd32;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.status-inactive {
+    display: inline-block;
+    background: linear-gradient(to bottom, #ffb6c1 0%, #ff69b4 100%);
+    color: #8b0000;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid #ff69b4;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Action Buttons in Grid */
+.salesman-grid-btn {
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000080;
+    transition: all 0.2s ease;
+    min-width: 70px;
+}
+
+    .salesman-grid-btn:hover {
+        background: linear-gradient(to bottom, #d0d0d0 0%, #b0b0b0 100%);
+        transform: translateY(-1px);
+    }
+
+    .salesman-grid-btn:active {
+        border-color: #808080 #ffffff #ffffff #808080;
+        transform: translateY(0);
+    }
+
+/* --- Status Bar --- */
+.salesman-status-bar {
+    margin-top: 15px;
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a8a8a8 100%);
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-family: 'Tahoma', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.salesman-status-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    .salesman-status-item::before {
+        content: "■";
+        color: #000080;
+        font-size: 10px;
+    }
+
+/* --- Summary Box --- */
+.salesman-summary-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%);
+    border: 2px solid #000080;
+    border-style: groove;
+}
+
+.salesman-summary-item {
+    text-align: center;
+    flex: 1;
+}
+
+.salesman-summary-label {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.salesman-summary-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000080;
+    font-family: 'Courier New', monospace;
+}
+
+/* --- No Data Message --- */
+.salesman-no-data {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-style: italic;
+    border: 2px dashed #ccc;
+    margin: 20px 0;
+    background: #f9f9f9;
+    font-size: 14px;
+}
+
+/* --- Validation Messages --- */
+.salesman-error-message {
+    color: #ff0000;
+    font-size: 11px;
+    margin-top: 3px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.salesman-form-group.error .salesman-retro-input,
+.salesman-form-group.error .salesman-retro-select {
+    border-color: #ff0000 #ffcccc #ffcccc #ff0000;
+    background: linear-gradient(to bottom, #fff0f0 0%, #ffe0e0 100%);
+}
+
+/* --- Loading Indicator --- */
+.salesman-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 128, 0.3);
+    border-radius: 50%;
+    border-top-color: #000080;
+    animation: salesman-spin 1s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes salesman-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+    .salesman-form-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .salesman-form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .salesman-grid-container {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .salesman-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .salesman-action-buttons {
+        flex-direction: column;
+    }
+
+    .salesman-retro-btn {
+        width: 100%;
+    }
+
+    .salesman-status-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .salesman-summary-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* --- Print Styles --- */
+@media print {
+    .salesman-master-container {
+        background: white !important;
+        color: black !important;
+    }
+
+    .salesman-retro-btn,
+    .salesman-status-bar {
+        display: none !important;
+    }
+
+    .salesman-grid {
+        border: 2px solid #000 !important;
+    }
+
+        .salesman-grid thead {
+            background: #ddd !important;
+            color: black !important;
+        }
+}
+
+/* --- Scrollbar Styling --- */
+.salesman-grid-container::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.salesman-grid-container::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 100%);
+    border: 1px solid #ccc;
+}
+
+.salesman-grid-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #c0c0c0 0%, #a0a0a0 100%);
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    border-radius: 0;
+}
+
+    .salesman-grid-container::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #d0d0d0 0%, #b0b0b0 100%);
+    }
+
+/* --- Date Input Calendar Icon --- */
+.salesman-retro-input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.3) sepia(1) saturate(5) hue-rotate(200deg);
+    cursor: pointer;
+}

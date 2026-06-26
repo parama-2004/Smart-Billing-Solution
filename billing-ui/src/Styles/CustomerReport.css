@@ -1,0 +1,322 @@
+/* === CUSTOMER REPORT - RETRO STYLING === */
+
+.customer-report-container {
+    font-family: 'Tahoma', 'Verdana', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffd9e6 100%);
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #000080;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.customer-report-header {
+    background: linear-gradient(to bottom, #cc0066 0%, #990044 100%);
+    color: #ffffff;
+    height: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.customer-filters-section {
+    background: linear-gradient(to bottom, #fff0f7 0%, #ffe8f3 100%);
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.customer-filters-section::before {
+    content: "SEARCH FILTER";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #cc0066;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.customer-search-input {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    padding: 10px 12px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.customer-search-input::placeholder {
+    color: #999;
+    font-weight: normal;
+}
+
+.customer-search-input:focus {
+    background: linear-gradient(to bottom, #ffffcc 0%, #ffffaa 100%);
+    border-color: #000080;
+    box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.2);
+}
+
+.customer-summary-section {
+    background: linear-gradient(to bottom, #ffe6f0 0%, #ffd0e6 100%);
+    padding: 20px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.customer-summary-section::before {
+    content: "CUSTOMER SUMMARY";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #cc0066;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.customer-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .customer-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.customer-summary-card {
+    background: linear-gradient(to bottom, #ffffff 0%, #fff5fa 100%);
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 15px;
+    border-radius: 0;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.customer-summary-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 48%, rgba(204, 0, 102, 0.1) 50%, transparent 52%);
+    pointer-events: none;
+}
+
+.customer-summary-card.purchases {
+    border-left: 5px solid #008000;
+}
+
+.customer-summary-card.returns {
+    border-left: 5px solid #ff0000;
+}
+
+.customer-summary-card.outstanding {
+    border-left: 5px solid #ff8800;
+}
+
+.customer-summary-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.customer-summary-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000080;
+    font-family: 'Courier New', monospace;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.customer-summary-card.purchases .customer-summary-amount {
+    color: #008000;
+}
+
+.customer-summary-card.returns .customer-summary-amount {
+    color: #ff0000;
+}
+
+.customer-summary-card.outstanding .customer-summary-amount {
+    color: #ff8800;
+}
+
+.customer-table-section {
+    background: linear-gradient(to bottom, #fff0f7 0%, #ffe8f3 100%);
+    padding: 15px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.customer-table-section::before {
+    content: "CUSTOMER RECORDS";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #cc0066;
+    color: white;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.customer-retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.customer-retro-table thead {
+    background: linear-gradient(to bottom, #cc0066 0%, #990044 100%);
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #000000;
+}
+
+.customer-retro-table thead th {
+    padding: 10px 8px;
+    text-align: left;
+    border-right: 1px solid #ff66cc;
+    border-bottom: 2px solid #ffffff;
+}
+
+.customer-retro-table thead th:last-child {
+    border-right: none;
+}
+
+.customer-retro-table tbody tr {
+    border-bottom: 1px solid #d0d0d0;
+    transition: all 0.2s ease;
+}
+
+.customer-retro-table tbody tr:nth-child(even) {
+    background: linear-gradient(to right, #ffffff 0%, #f5f5f5 100%);
+}
+
+.customer-retro-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.customer-retro-table tbody tr:hover {
+    background: linear-gradient(to right, #ffffcc 0%, #ffffaa 100%);
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.customer-retro-table tbody td {
+    padding: 8px;
+    border-right: 1px solid #e0e0e0;
+    word-wrap: break-word;
+}
+
+.customer-retro-table tbody td:last-child {
+    border-right: none;
+}
+
+.customer-loyalty-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    border: 2px solid;
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(to bottom, #ffff00 0%, #ffcc00 100%);
+    color: #000;
+    border-color: #ffffff #cc9900 #cc9900 #ffffff;
+    box-shadow: inset 1px 1px 0 #ffffff, 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.customer-loading {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Courier New', monospace;
+    color: #000080;
+    font-weight: bold;
+}
+
+.customer-empty-state {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Courier New', monospace;
+    color: #666;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .customer-report-container {
+        padding: 10px;
+    }
+
+    .customer-retro-table {
+        font-size: 11px;
+    }
+
+    .customer-retro-table thead th,
+    .customer-retro-table tbody td {
+        padding: 6px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .customer-report-container {
+        padding: 5px;
+    }
+
+    .customer-filters-section,
+    .customer-summary-section,
+    .customer-table-section {
+        padding: 10px;
+    }
+
+    .customer-retro-table {
+        font-size: 10px;
+    }
+}

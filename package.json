@@ -1,0 +1,27 @@
+{
+    "name": "billing-suite-desktop",
+    "version": "1.1.4",
+    "description": "Billing Suite — All-in-one desktop application",
+    "author": {
+        "name": "ParamaGuru",
+        "email": "parama2000jd@gmail.com"
+    },
+    "private": true,
+    "main": "electron/main.js",
+    "scripts": {
+        "dev:ui": "cd billing-ui && npm run dev",
+        "dev:api": "cd Billing.Api && dotnet run",
+        "dev": "concurrently \"npm run dev:api\" \"npm run dev:ui\" \"npx wait-on http://localhost:5173 && npx electron .\"",
+        "build:ui": "cd billing-ui && npm run build",
+        "build:api": "cd Billing.Api && dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ../build/api",
+        "build": "npm run build:ui && npm run build:api",
+        "package": "npm run build && npx electron-builder --win --config electron-builder.yml",
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.2",
+        "electron": "^30.0.0",
+        "electron-builder": "^25.1.1",
+        "wait-on": "^8.0.3"
+    }
+}
